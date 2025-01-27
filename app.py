@@ -12,6 +12,10 @@ app = Flask(__name__)
 # Get API key from environment variables
 OPEN_AI_KEY = os.getenv('API_KEY')
 
+@app.route("/")
+def home():
+    return "Hello from Flask on Render!"
+
 # Endpoint to fetch captions
 @app.route('/captions', methods=['GET'])
 def get_captions():
